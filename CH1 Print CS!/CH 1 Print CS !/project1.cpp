@@ -1,3 +1,8 @@
+//Author: Rachada Chairangsaris (Bay)
+//Source file: project1.cpp
+//Description: Print CS !!
+//IDE used: Visual Studio Code
+
 #include <iostream>
 using namespace std;
 
