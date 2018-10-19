@@ -1,0 +1,1 @@
+Sample writing data to an empty document
