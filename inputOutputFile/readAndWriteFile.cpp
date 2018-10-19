@@ -27,6 +27,12 @@ int main()
     ofstream outFile;
     outFile.open("doc.txt");
 
+    if (outFile.fail())
+    {
+        cerr << "Cannot open file";
+        exit(1);
+    }
+
     outFile << "Sample writing data to an empty document" << endl;
 
     outFile.close();
