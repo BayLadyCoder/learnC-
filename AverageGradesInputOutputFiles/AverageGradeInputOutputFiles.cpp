@@ -1,6 +1,6 @@
 /*
 Name: Rachada Chairangsaris (Bay)
-Description: Midterm Exam - Hands-On Practical
+Description: I/O Files, average grade functions
 IDE used: Visual Studio Code
 Date: Tuesday, October 23rd, 2018
 */
