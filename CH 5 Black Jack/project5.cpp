@@ -41,27 +41,6 @@ int hit(int &total)
     return total;
 }
 
-int hitOrStand(int &total)
-{
-
-    string hitOrStand;
-    cout << "hit or stand?" << endl;
-    cin >> hitOrStand;
-    if (hitOrStand == "hit")
-    {
-        total = hit(total);
-    }
-    return total;
-}
-
-bool continueOrNot(int &total)
-{
-    if (total <= 21)
-        return true;
-    else
-        return false;
-}
-
 bool bustOrNot(int &total)
 {
     if (total > 21)
@@ -73,6 +52,36 @@ bool bustOrNot(int &total)
         cout << "player total: " << total << endl;
     return false;
 }
+
+int hitOrStand(int &playerTotal, int& houseTotal)
+{
+
+    string hitOrStand;
+    cout << "hit or stand?" << endl;
+    cin >> hitOrStand;
+    if (hitOrStand == "hit")
+    {
+        playerTotal = hit(playerTotal);
+        bustOrNot(playerTotal);
+        return playerTotal;
+    }
+    else {
+        houseTotal = hit(houseTotal);
+        bustOrNot(houseTotal);
+        return houseTotal;
+    }
+    
+}
+
+bool continueOrNot(int &total)
+{
+    if (total <= 21)
+        return true;
+    else
+        return false;
+}
+
+
 
 void playerTurn(int money, int &wager, bool &bust, int &total, int &houseRoll)
 {
@@ -110,12 +119,12 @@ int main()
         bool gameContinue = continueOrNot(playerTotal);
         if (gameContinue)
         {
-            playerTotal = hitOrStand(playerTotal);
+            playerTotal = hitOrStand(playerTotal, houseTotal);
             bustOrNot(playerTotal);
             gameContinue = continueOrNot(playerTotal);
             if (gameContinue)
             {
-                playerTotal = hitOrStand(playerTotal);
+                playerTotal = hitOrStand(playerTotal, houseTotal);
                 bustOrNot(playerTotal);
             }
         }
